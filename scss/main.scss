@@ -1,0 +1,11 @@
+@import './fonts';
+// @import './normalize';
+@import './blocks/allblocks';
+@import './generals';
+@import './variables';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+}
+body{margin: 0 !important;}

@@ -1,0 +1,202 @@
+@import '../fonts';
+@import '../variables';
+.nav{
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    padding: 22px 0px;
+    background-color: rgb(29, 29, 29);
+
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__list,
+    &__list2{
+        display: flex;
+    }
+    &__link,
+    .list2__link{
+        font-weight: 500;
+        color: white;
+    }
+}
+.nav__link_color{
+    color: $main-red;
+    margin-left: 20px;
+}
+
+.list2__link_margin{
+    margin: 0px 30px;
+}
+.nav__img{
+    display: inline;
+}
+.bars{color: white;display: none;}
+.nav-modal{display: none;}
+.navbar{display: none;}
+
+@media screen and (min-width:1000px) {
+    .container{
+        max-width: 960px;
+    }
+    .nav{padding: 18px 0px;}
+    .nav__list2{
+        display: none;
+    }
+    .bars{
+        display: block;
+        border-radius: 5px;
+    }
+    
+    .nav-modal{
+        display: inline;
+    }
+    
+    
+    .nav-input {
+        visibility: hidden;
+    }
+    .navbar-modal {
+        z-index: 10;
+        overflow: visible;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: inline-block;
+        width: 100vw;
+        height: 100vh;
+        transform: translateX(-1000px);
+        transition: all 1s ease-in-out;
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: rgb(82, 82, 82);
+    }
+    .nav-input:checked ~ .fa-bars {
+        display: none;
+    }
+    .nav-input:checked ~ .fa-xmark {
+        display: block;
+    }
+    .nav-input:checked ~ .navbar-modal {
+        transform: translateX(0px);
+    }
+    .fa-xmark{
+        color: white;
+        background-color: rgba(37, 37, 37, 0.925);
+        padding: 5px 12px;
+        border-radius: 5px;
+        position: absolute;
+        margin-right: 50px;
+        margin-top: 20px;
+        // bottom: 200px;
+        // right:505px;
+    }
+    .modal__first{
+        width: 85%;
+        background:
+        url('/img/main-bgorigin.png');
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+    
+    .modal__list{
+        position: absolute;
+        top: 60px;
+        right: 620px;
+        & > li{
+            margin-bottom: 30px;
+        }
+    }
+    .modal__link{
+        margin: -100px !important;
+        color: white;
+        font-size: 34px;
+}
+.desc__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 45%;
+    margin-left: 50px;
+}
+.modal__desc{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 120px !important;
+    margin-top: 20px;
+    &:first-child{padding-top: 30px;}
+}
+.p_width{width: 89%;}
+.desc__p{
+    font-size: 18px;
+    color: rgba(92, 92, 92, 1);
+    margin-bottom: 15px;
+}
+.desc__link{
+    font-size: 16px;
+    color: white;
+    margin: 0 !important;
+    margin-bottom: 12px !important;
+}
+.modal__img{
+    margin-top: 30px;
+    width: 300px;
+    height: 300px;
+}
+.desc__adress{
+    color: rgba(92, 92, 92, 1);
+    font-size: 14px;
+    margin: 0 !important;
+}
+}
+
+@media screen and (min-width:768px) {
+    .container{max-width: 728px;}
+    .nav-modal{
+        display: inline;
+    }
+    
+    .modal__list{
+        right: 500px;
+    }
+    .modal__first{padding: 10px;}
+    .modal__img{align-self: flex-end;margin-right: 100px;}
+}
+
+@media screen and (min-width:480px) {
+    .container{max-width: 439px;}
+    .nav__list{display: none;}
+    .modal__img{display: none;}
+    .modal__list{
+        right: 230px;
+    }
+    .modal__first{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .modal__link{font-size: 28px;}
+    .desc__p{font-size: 18px;}
+    .desc__wrapper{
+        margin-left: -70px;
+        margin-top: 80px;
+        width: 60%;
+    }
+    .desc__adress:last-child{margin-top: 20px;width: 120%;}
+}
+
+
+@media screen and (min-width:360px) {
+    .container{max-width: 320px;}
+    .modal__list{right: 185px;}
+    .modal__desc{margin-left: 100px;}
+    .modal__link{font-size: 22px;}
+    .desc__p{font-size: 16px;}
+    .desc__link{font-size: 14px;}
+    .desc__adress{font-size: 14px;}
+    .adress_width{width: 75% !important;}
+}
